@@ -1,6 +1,6 @@
 # Glue
 
-* Fully `managed` [ETL]() and data integration service.
+* Fully `managed` [ETL](../Databases.md#etl) and data integration service.
 * `Discover`, `prepare`, `move`, and `integrate` data from different sources for analytics
 * Ability to `read and write` data from `multiple` systems and `databases`
 * Simplifies `batch` and `streaming` ingestion
@@ -57,6 +57,6 @@
 4. **ETL Transformation (AWS Glue Studio)** `visually` design `ETL jobs`, simplifying data transformation.
 5. **Interactive Development (AWS Glue Studio Notebooks)** `Jupyter-based` AWS `Glue Studio` Notebooks allow `interactive` job creation with minimal setup.
 6. **Data Preparation (AWS Glue DataBrew)** provides a `no-code` interface for `cleaning` and `preparing` data.
-7. **Data Consumption** Processed data is stored in Amazon [Redshift](), [Athena](), or [S3]() for querying and analysis.
+7. **Data Consumption** Processed data is stored in Amazon **Redshift**, [Athena](../Analytics/Athena.md), or [S3](../Storage/S3.md) for querying and analysis.
 
 **Use AWS Glue when an analytics use case doesn’t require real-time aggregation or transformation of data (don’t need live processing)**

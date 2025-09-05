@@ -1,7 +1,7 @@
 # Key Management Service (KMS)
 
 * Provides the `ability` to `create` and `manage` `cryptographic keys`
-* Uses [hardware security modules (HSMs)]() to `protect` your `keys`
+* Uses [hardware security modules (HSMs)](../Security.md#hsm) to `protect` your `keys`
 * `Integrates` with other AWS `services`
 * Set `usage policies` to `determine` which `users` can `use keys`
 
@@ -62,12 +62,12 @@
 * The `actual encryption and decryption` of large datasets happens `inside the service`, `not inside KMS`.
 
 
-### [S3]()
+### [S3](../Storage/S3.md)
 * `Server-side encryption` of `objects`.
 * Encryption `keys` `stored` and `used` from KMS
 * `Permissions` `on KMS` keys can be `set` to `control access`.
 
-### [Elastic Block Storage (EBS)]()
+### [Elastic Block Storage (EBS)](../Computing/EC2.md#ebs)
 * Data at `rest, I/O, and snapshots` are `encrypted`.
 * Encryption `occurs` on servers `hosting EC2 instances`.
 * Supported on `all EBS volume types`.

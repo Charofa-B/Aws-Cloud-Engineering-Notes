@@ -7,6 +7,6 @@
 * `Encrypt` your CloudTrail event log files with an AWS KMS key
 
 ## Trails
-* Configuration that enables `delivery` of CloudTrail events to an [S3]() bucket
+* Configuration that enables `delivery` of CloudTrail events to an [S3](../Storage/S3.md) bucket
 * Optional `delivery` to [CloudWatch]() Logs and Amazon EventBridge
 * Use a trail to `choose` the CloudTrail `events` you want delivered

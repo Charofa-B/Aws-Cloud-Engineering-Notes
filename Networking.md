@@ -49,7 +49,7 @@
 
 <br><br>
 
-## Route Propagation
+## [Route Propagation](#route-propagation)
 Route propagation is the process where routes learned dynamically from another network or device are automatically added to a route table.
 
 <br><br>
@@ -72,7 +72,7 @@ It’s a security check that ensures the client device meets certain requirement
 
 <br><br>
 
-## IPsec
+## [IPsec](#ipsec)
 * A framework of protocols that secures IP traffic at the network layer.
 * Provides confidentiality (encryption), integrity (hashing), and authentication.
 * Works by adding cryptographic headers to each IP packet.
@@ -87,7 +87,7 @@ It’s a security check that ensures the client device meets certain requirement
 
 <br><br>
 
-## OpenVPN
+## [OpenVPN](#openvpn)
 * is a popular open-source VPN solution that provides secure remote access over the internet.
 * Unlike `IPsec` VPNs, which are often `hardware-based`, OpenVPN is `software-based`.
 * Supports strong encryption (AES, RSA, etc.) to protect data in transit
@@ -103,7 +103,7 @@ It’s a security check that ensures the client device meets certain requirement
 <br><br>
 
 
-## Load Balancer (LB)
+## [Load Balancer (LB)](#load-balancer)
 * **Traffic Distribution** `Spreads` incoming traffic `across multiple servers` (targets).
 * **Health Checks** `Monitors` servers and only `routes` to `healthy ones`.
 * **High Availability** Ensures your `app stays up even` if some servers fail.

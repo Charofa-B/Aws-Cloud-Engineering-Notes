@@ -7,7 +7,7 @@
 * Operational `troubleshooting`
 * Tracks `changes` to resources
 * Provides AWS resource `inventory`, `configuration history`, and configuration change `notifications`.
-* Combines with AWS [CloudTrail]() for full `visibility` into what `contributed` to a change.
+* Combines with AWS [CloudTrail](../Monitoring/CloudTrail.md) for full `visibility` into what `contributed` to a change.
 
 <br/><br>
 

@@ -68,7 +68,7 @@ A networking connection that lets you route traffic privately between 2 VPCs
 <br><br>
 
 ### Bypass This Limtiation (Alternatives)
-Almost All The Limtis of **VPC Peering** can bypass by using [**Transit Gateway**](#Transit-Gateway).
+Almost All The Limtis of **VPC Peering** can bypass by using [Transit Gateway](./Transit-Gateway.md)
 
 ⚠️ But note: TGW still does not allow overlapping CIDR ranges.
 

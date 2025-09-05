@@ -3,7 +3,7 @@
 ## AWS VPN is comprised of two services
 
 #### Site-to-Site VPN
-is based on [IPsec](#) and establishes a `VPN tunnel` over the public internet to securely pass data between your on-premises (customer) network and your AWS VPC.
+is based on [IPsec](../Networking.md#ipsec) and establishes a `VPN tunnel` over the public internet to securely pass data between your on-premises (customer) network and your AWS VPC.
 
 #### Establishment
 1. Configure the Customer Gateway (CGW):
@@ -31,11 +31,11 @@ is based on [IPsec](#) and establishes a `VPN tunnel` over the public internet t
 * When connecting multiple VPCs to the same on-premises network, ensure that VPC and on-prem CIDRs do not overlap to prevent routing conflicts.
 
 #### monitoring
-monitor VPN tunnels using Amazon [CloudWatch](#), 
+monitor VPN tunnels using Amazon [CloudWatch](../Monitoring/CloudWatch.md), 
 * which collects and processes `raw data` from the VPN service into `readable`, near `real-time metrics`. 
 * These statistics are recorded for a period of 15 months. 
 * You can access historical information and gain a `better perspective` on how your web application or service is performing. 
-* VPN metric data is `automatically` sent to [CloudWatch](#) as it becomes available.
+* VPN metric data is `automatically` sent to [CloudWatch](../Monitoring/CloudWatch.md) as it becomes available.
 
 #### Pricing
 AWS Site-to-Site VPN connection per hour (varies by Region) 
@@ -50,7 +50,7 @@ AWS Site-to-Site VPN connection per hour (varies by Region)
 
 ### Client VPN
 
-* Based on [OpenVPN]() technology
+* Based on [OpenVPN](../Networking.md#openvpn) technology
 * Managed `client-based VPN` service that lets you securely access your AWS resources and resources in your on-premises network
 * `Client VPN endpoint` is an AWS-managed entry point for remote clients (like laptops, mobile devices) to connect securely to your AWS network.
 
@@ -85,9 +85,9 @@ AWS Site-to-Site VPN connection per hour (varies by Region)
 * Limited Multi-AZ Redundancy
 
 ### Client VPN monitoring
-* End-user usage reporting is possible through [CloudWatch]() Logs.
-* You can use a `client connect handler` which a [Lambda]() to do basic posture assessment because Client VPN `does not support native posture assessment`.
-* Client VPN publishes metrics to [CloudWatch]() for your Client VPN endpoints. Metrics are published to [CloudWatch]() `every five minutes`.
+* End-user usage reporting is possible through [CloudWatch](../Monitoring/CloudWatch.md) Logs.
+* You can use a `client connect handler` which a Lambda to do basic posture assessment because Client VPN `does not support native posture assessment`.
+* Client VPN publishes metrics to [CloudWatch](../Monitoring/CloudWatch.md) for your Client VPN endpoints. Metrics are published to [CloudWatch](../Monitoring/CloudWatch.md) `every five minutes`.
 
 
 ### Pricing

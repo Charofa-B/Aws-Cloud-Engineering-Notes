@@ -51,7 +51,7 @@
     * `IAM user` 
     * `user that was authenticated through federation`
 
-### [Identity Federation]() To AWS With An [Identity Broker]()
+### [Identity Federation](../Security.md#identity-federation) To AWS With An [Identity Broker](../Security.md#identity-broker)
 1. User signs in with existing `credentials` for their `IdP`
 2. `Identity broker` acts as an intermediary between `IdP` and `SP`
     *  The `identity broker` requests temporary credentials from AWS `STS`.

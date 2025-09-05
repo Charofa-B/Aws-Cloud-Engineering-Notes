@@ -6,9 +6,9 @@
 <br><br>
 
 ## EndPoint types: 
-* [Kinesis Data Firehose]()
-* [Amazon SQS]()
-* [AWS Lambda]()
+* [Kinesis Data Firehose](../Analytics/Kinesis.md)
+* [Amazon SQS](./Simple-Queue-Service%20(SQS).md)
+* AWS Lambda
 * HTTP 
 * Email
 * Mobile push notifications

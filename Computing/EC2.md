@@ -68,13 +68,13 @@ the aws compute optimizer returns one of this results
 | Elastic File System (EFS)    | No                 | No                               | Yes                                      | No                                         |
 | FSx for Windows File Server         | No                 | No                               | No                                       | Yes                                        |
 
-### Elastic Block Storage (EBS)
+### [Elastic Block Storage (EBS)](#ebs)
 * `Network-attached` block storage for EC2, `not tied` to the same compute machine.
 * Think of it like a `virtual hard disk` that you can attach to your instances.
 * `Persistent` Data remains even if the instance is stopped or terminated.
 * Can `only be attached` to `one EC2 instance at a time (in the same AZ)`.
 * Can be `encrypted`.
-* Supports `snapshots` that are persisted to [S3]().
+* Supports `snapshots` that are persisted to [S3](../Storage/S3.md).
 * We can use `EBS-optimized instances` so that I/O access to an EBS volume is increased.
 
 #### EBS (hdd vs ssd)

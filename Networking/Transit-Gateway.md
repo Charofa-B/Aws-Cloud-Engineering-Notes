@@ -13,7 +13,7 @@
 <br>
 
 ## Use Cases
-Large, complex networks where [VPC peering]() becomes `unmanageable`.
+Large, complex networks where [VPC peering](./VPC-Peering.md) becomes `unmanageable`.
 
 <br>
 
@@ -41,7 +41,7 @@ Support MTU (Maximum Transmission Unit) of `8500 Bytes` For:
 * Each attachment is associated with exactly one route table. Each route table can be associated with zero to many attachments.
 
 ### Route propagation
-* A VPC, VPN connection, or Direct Connect gateway can dynamically [propagate routes](#) to a transit gateway route table.
+* A VPC, VPN connection, or Direct Connect gateway can dynamically [propagate routes](../Networking.md#route-propagation) to a transit gateway route table.
 * On VPC Level you must create static routes to send traffic to the transit gateway.
 * With a VPN connection or a Direct Connect gateway
 * * On-premises network `advertises` its routes via `BGP` over the Direct Connect link.

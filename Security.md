@@ -1,4 +1,4 @@
-## Identity federation
+## [Identity federation](#identity-federation)
 * System of trust between `two parties` to `authenticate` users and `convey` `information` that’s needed to `authorize access` to `resources`.
 
 ### Identity provider (IdP)
@@ -39,5 +39,11 @@
 
 <br><br>
 
-## Identity Broker 
+## [Identity Broker](#identity-broker) 
 `Bridge` between an `Identity Provider (IdP)` (like LDAP, Kerberos, or a custom auth system) and a `Service Provider (SP)` (which could be AWS, GCP, Azure, or even Salesforce).
+
+<br><br>
+
+## [Hardware Security Modules (HSM)](#hsm)
+* Specialized `physical device` designed to securely `generate`, `protect`, and `manage` digital `keys` used for `encryption`, `authentication`, and digital `signatures`. 
+* Acts as a `high-assurance` root of trust in `cryptographic` systems.

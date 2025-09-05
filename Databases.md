@@ -2,7 +2,7 @@
 
 <br><br>
 
-## Auto Scaling
+## [Auto Scaling](#auto-scaling)
 * Capability that lets you automatically adjust capacity for your resources.
 
 <br><br>
@@ -24,7 +24,7 @@
 
 <br><br>
 
-## MemCache
+## [MemCache](#memcache)
 * **Simple key-value store** designed for storing and retrieving simple key-value pairs.
 * **High performance** especially in scenarios that require frequent key-value lookups.
 * **No persistence** does not offer persistence options.
@@ -41,7 +41,7 @@ Isdeal for handling large volumes of data efficiently by grouping tasks together
 
 <br><br>
 
-## ETL (Extract → Transform → Load)
+## [ETL (Extract → Transform → Load)](#etl)
 Process To manage data from multiple difference source
 ### 1. Extract
 Pull (collect) data from different sources.
@@ -54,7 +54,7 @@ Store the processed (transformed) data into a destination system for analytics.
 
 <br><br>
 
-## Streaming ETL
+## [Streaming ETL](#streaming-etl)
 * Instead of batch ETL (processing data once per hour/day), you extract, transform, and load data continuously in real time as events arrive.
 
 ### How It Works

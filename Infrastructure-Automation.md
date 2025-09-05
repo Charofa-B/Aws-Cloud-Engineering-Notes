@@ -30,7 +30,7 @@ Automation is powerful, but it can be `overkill` if requirements are `simple`. T
 
 <br><br>
 
-## Infrastructure As Code (IaC)
+## [Infrastructure As Code (IaC)](#iac)
 * Method of `provisioning` and `managing` cloud `resources` by defining them in a readable and machine-consumable `template`.
 * `Automates` `setup`, updates, and maintenance for application `environments`, `reducing` the `time` and `errors` involved in manual processes.
 * `Defining` and managing infrastructure (servers, networks, databases, IAM, etc.) in code `files` stored in `version control`.
@@ -83,7 +83,7 @@ Automation is powerful, but it can be `overkill` if requirements are `simple`. T
 
 <br><br>
 
-## Chef And Puppet Automation
+## [Chef And Puppet Automation](#chef-and-puppet-automation)
 * `Configuration` management `tools`.
 * Use `code` (“recipes” or “manifests”) to `define` how `servers should be configured`.
 

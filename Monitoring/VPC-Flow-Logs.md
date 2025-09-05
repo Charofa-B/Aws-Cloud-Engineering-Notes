@@ -7,7 +7,7 @@
 ## Features
 * Can `capture all`, `accepted`, or `rejected` `traffic`.
 * Can be enabled at the `VPC`, `subnet`, or `ENI` `level`.
-* `Logs` are `delivered` to [CloudWatch](), [S3](), or [Kinesis Data Firehose]().
+* `Logs` are `delivered` to [CloudWatch](), [S3](../Storage/S3.md), or [Kinesis Data Firehose]().
 
 <br><br>
 

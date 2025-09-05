@@ -24,7 +24,7 @@
 
 <br><br>
 
-## Kubernetes (a.k.a. K8s)
+## [Kubernetes (a.k.a. K8s)](#kubernetes)
 * Open-source container orchestration platform.
 * Automates deployment, scaling, and management of containerized applications.
 
@@ -150,7 +150,7 @@ Open-source message broker built on the Advanced Message Queuing Protocol (AMQP)
 
 <br><br>
 
-## Apache Kafka
+## [Apache Kafka](#apache-kafka)
 
 * `open-source`, `distributed` event `streaming` platform.
 * Mainly used to `publish` (write), `subscribe` (read), store, and `process` streams of `events` in `real time`.

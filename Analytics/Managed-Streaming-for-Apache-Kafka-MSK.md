@@ -15,6 +15,6 @@
 <br><br>
 
 ## MSK Connect
-* Managed service for running [Kafka Connect]() on AWS
+* Managed service for running [Kafka Connect](../Distributed-System.md#apache-kafka) on AWS
 * Easily integrate Kafka topics (MSK or self-managed Kafka) with external systems (databases, storage, analytics tools).
 * No code and serverless type

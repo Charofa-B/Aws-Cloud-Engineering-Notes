@@ -89,7 +89,7 @@
 
 ## Kinesis Data Analytics (KDA)
 * Allows you to use `Structured Query Language` to query data in a Kinesis Data Stream and/or a Kinesis Data Firehose
-* Then store it to [S3](), an [OpenSearch]() cluster, or [Redshift]() cluster.
+* Then store it to [S3](../Storage/S3.md), an [OpenSearch]() cluster, or [Redshift]() cluster.
 * Does `not persist` data — it only `prepares/aggregates/transforms` for the next stage.
 
 ### How It Works

@@ -1,6 +1,6 @@
 # Elastic Load Balancer
 
-* Aws version of [Load Balancer]()
+* Aws version of [Load Balancer](../Networking.md#load-balancer)
 * Supports multiple protocols (HTTP, HTTPS, TCP, UDP) and advanced routing for modern application architectures
 * Works tightly with Auto Scaling Groups to add/remove EC2 instances.
 * Integrates with AWS Certificate Manager for SSL/TLS, and supports VPC security groups and AWS WAF to protect against attacks.

@@ -2,14 +2,14 @@
 
 ## Shield
 * Build for conter `DDOS Attacks`
-* Integrated with multiple AWS services (e.g., [Route 53](), [CloudFront](), [Global Accelerator]())
+* Integrated with multiple AWS services (e.g., [Route 53](../Networking/Route53.md), [CloudFront](../Edge-Services/CloudFront.md), [Global Accelerator]())
 
 ### Standard
 * `Free` to use
 * `Automatically` used on `aws account`
 * Provides `automatic detection` and mitigation of `common DDoS attacks`.
 * Layer 3 and 4 Protection
-* Used by `multiple services` like [Route 53]() and [CloudFront]()
+* Used by `multiple services` like [Route 53](../Networking/Route53.md) and [CloudFront](../Edge-Services/CloudFront.md)
 
 ### Advanced
 * Requires a `subscription`
@@ -65,7 +65,7 @@
     * `SQL injection` or `XSS patterns`
 * Automatically `block IPs` sending `requests` above a `threshold`
 * Use `Shield (included at no additional cost)` to help `minimize` the `impact` of `DDoS attacks`.
-* Integrated with: [CloudFront](), [Application Load Balancer (ALB)](), [API Gateway](), [AppSync]()
+* Integrated with: [CloudFront](../Edge-Services/CloudFront.md), [Application Load Balancer (ALB)](), [API Gateway](), [AppSync]()
 * Support `Captcha setup`
 * Support Login
 
@@ -114,7 +114,7 @@
 <br><br>
 
 ## Macie
-* Data `security` service that `discovers, classify, protect sensitive data stored` in [S3]()
+* Data `security` service that `discovers, classify, protect sensitive data stored` in [S3](../Storage/S3.md)
 * `Using machine learning` and `pattern matching`
 * Use b`uilt-in` or `custom data identifiers`.
 * `Review`, `analyze`, and manage findings.

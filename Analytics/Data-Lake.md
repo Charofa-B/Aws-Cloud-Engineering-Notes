@@ -3,22 +3,22 @@
 <img src="../Assets/data-lake.png" />
 
 ## 1. Storage
-* [S3]() for storing `large volumes` of `unstructured` data.
+* [S3](../Storage/S3.md) for storing `large volumes` of `unstructured` data.
 * With [Lifecycle Policies]() to manage storage costs by `moving` `infrequently` accessed data to cheaper storage classes or [S3 Glacier]().
 
 ## 2. Data Movement
-* Use [Kinesis]() for real-time `streaming`, database `migration services` for `bulk data transfers`, or `Snowball` for `physical` data `transfer`.
+* Use [Kinesis](../Analytics/Kinesis.md) for real-time `streaming`, database `migration services` for `bulk data transfers`, or `Snowball` for `physical` data `transfer`.
 ## 3. Data Cataloging and Discovery
 * Create `metadata` to describe `data formats`, `sensitivity`, and other `relevant information`.
 * AWS [Glue]() to manage [ETL]() service with a robust data catalog for `automated` data `discovery` and `cataloging`.
 ## 4. Generic Analytics
-* [Kinesis]() Data `Analytics` for `real-time` insights.
-* [Athena] for SQL-based `queries` on `S3` data for `interactive insights`.
-* [QuickSight] for creating visualizations `dashboard`.
+* [Kinesis](../Analytics/Kinesis.md) Data `Analytics` for `real-time` insights.
+* [Athena](../Analytics/Athena.md) for SQL-based `queries` on `S3` data for `interactive insights`.
+* QuickSight for creating visualizations `dashboard`.
 Redshift for in-depth analysis on structured data for data warehouse.
 ## 5. Predictive Analytics
-* [SageMaker]() for building, training, and deploying `machine learning models for predictions`.
-* [Deep Learning AMIs]() for `advanced analytics` with `deep learning`.
+* SageMaker for building, training, and deploying `machine learning models for predictions`.
+* Deep Learning AMIs for `advanced analytics` with `deep learning`.
 
 <br> <br>
 
@@ -30,7 +30,7 @@ Redshift for in-depth analysis on structured data for data warehouse.
 
 ### AWS Lake Formation Service
 * `Service` `helps` you `set up` a data lake in a secure manner and takes `only a few days`. 
-* `crawls` and `catalogs` your data from `various sources` including [S3](), relational databases, NoSQL databases, [CloudTrail]() logs, [Kinesis]() Firehose logs, [Elastic Load Balancers]() logs, and [CloudFront] logs.
+* `crawls` and `catalogs` your data from `various sources` including [S3](../Storage/S3.md), relational databases, NoSQL databases, [CloudTrail](../Monitoring/CloudTrail.md) logs, [Kinesis](../Analytics/Kinesis.md) Firehose logs, [Elastic Load Balancers](../Networking/ElasticLoadBalancer.md) logs, and [CloudFront](../Edge-Services/CloudFront.md) logs.
 
 #### steps involved in using AWS Lake Formation to build a data lake
 1. `Identify` the `data sources` you want to `move` to the `data lake`.

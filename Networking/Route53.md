@@ -19,7 +19,7 @@
 
 <br><br>
 
-## Integration With [ELB]()
+## Integration With [ELB](../Networking/ElasticLoadBalancer.md)
 
 1. By `default`, AWS `assigns` a `hostname` (DNS name) to your [load balancer]() that `resolves` to a set of `IP addresses`.
 2. Assign your `own hostname` by `using` an `alias resource record set`.
