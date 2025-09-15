@@ -1,5 +1,11 @@
 # Config
+* [What Is It](#what-is-it)
+* [Addresses Configuration Management](#addresses-configuration-management)
+* [Rules](#rules)
 
+<br><br>
+
+# What Is It
 * `Measure`, audit, and `evaluate` the configuration of your AWS resources.
 * Continuous `monitoring`
 * Continuous `assessment`
@@ -11,29 +17,29 @@
 
 <br/><br>
 
-## Addresses configuration management
-### Reporting Current System Status and Configuration
+# Addresses configuration management
+## Reporting Current System Status and Configuration
 * `Continuously` `records` the configuration `state` of your AWS `resources`.
 * Maintains a `historical` record of these `configurations`.
 
-### Controlling Configuration History
+## Controlling Configuration History
 * keeps a `version history` of each `resource's` `configuration`
 * Ensure `compliance` with `security` and regulatory standards
 
-### Visibility into Human Errors and Change Management
+## Visibility into Human Errors and Change Management
 * Send `notifications` when `changes` are `made` to your resources.
 * `automate` remediation actions for `certain` `configuration` violations
 * `Centralizing` your configuration management
 
 <br/><br/>
 
-## Rules
+# Rules
 * Custom `checks` that `continuously` `evaluate` the `configuration` of your AWS resources against `desired settings or policies`.
 * `Continuously monitor` your AWS environment, `ensuring` that your `resources` are `configured` `correctly` and `securely`.
 * Rules can be `configured` to `trigger` `alerts` or take `automated actions` when violations are detected.
 * Asign Ressource to `Compliant` if it accepted or `Non-Compliant` if not.
 
-### Types
+## Types
 * **Managed Rules**
     * `Predefined` by AWS.
     * Cover common `best practices` and compliance checks.

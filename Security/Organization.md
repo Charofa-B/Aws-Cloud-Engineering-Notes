@@ -1,5 +1,14 @@
 # Organization
+* [What Is It](#what-is-it)
+* [Features](#features)
+* [Root Account Vs Master Account](#root-account-vs-master-account)
+* [Service Control Policies (SCPs)](#service-control-policies-scps)
+* [Organization Unit (OU)](#organization-unit-ou)
+* [Control Tower](#control-tower)
 
+<br><br>
+
+# What Is It
 `Central account management` service that helps you `consolidate multiple AWS accounts` into an `organization` for easier billing, governance, and security.
 
 ## Organization Key Enables
@@ -10,7 +19,7 @@
 
 <br><br>
 
-## Features
+# Features
 * `Groups of accounts` and then attach `policies to a group`
 * `Automate` the `creation` and `management` of new AWS `accounts` by using `APIs`
 * **consolidated billing**
@@ -20,7 +29,7 @@
 
 <br><br>
 
-## Root Account Vs Master Account
+# Root Account Vs Master Account
 | Feature                     | Root Account                                                                       | Master Account (AWS Organizations)                                                                                 |
 | --------------------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | **Definition**              | The `original account created when signing up` for AWS                               | The account `designated` as the `payer/management` `account` in AWS Organizations                                    |
@@ -31,7 +40,7 @@
 
 <br><br>
 
-## Service Control Policies (SCPs)
+# Service Control Policies (SCPs)
 * Define the maximum `permissions` that `accounts` (and `IAM` entities within them) `can have`.
     * Only `Deny permissions` - do `not grant permissions`
 * SCP is `applied to all the Users and Roles` of the Account, including `Root` user
@@ -42,7 +51,7 @@
 * Does `not apply` to the `Master Account`
 * SCP must have an explicit Allow (`does not allow anything by default`)
 
-### Features
+## Features
 * **Scope**
     * Apply at the `root`, `Organizational` Unit (`OU`), or individual `account level`.
     * Policies `cascade down` → child OUs and accounts inherit SCPs.
@@ -55,7 +64,7 @@
 
 <br><br>
 
-## Organization Unit (OU)
+# Organization Unit (OU)
 * Logical `Group` of `accounts`
 * organize `accounts` within a larger AWS organization `structure`
     * `centralized` management and control over `groups` of AWS `accounts`

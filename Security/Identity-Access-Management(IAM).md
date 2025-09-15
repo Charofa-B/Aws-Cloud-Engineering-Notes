@@ -1,10 +1,18 @@
 # Identity and Access Management (IAM)
+* [What Is It](#what-is-it)
+* [Concepts](#concept)
+* [IAM Identity Center](#iam-identity-center)
+* [Security Token Service (AWS STS)](#security-token-service-aws-sts)
+
+<br><br>
+
+# What Is It
 * Global service that helps you securely control access to AWS resources.
 * It manages who can access what resources and how.
 
 <br><br>
 
-## Core Concepts
+# Core Concepts
 
 * **Users** → Individual identities with credentials (`username/password`, `access keys`).
     * `Best practice`: Avoid long-term `IAM users for humans`, use federation or IAM Identity Center.
@@ -17,9 +25,9 @@
 * **Managed policy** → `reusable` (AWS-managed or customer-managed).
 * **Principals** → `Entities` (user, role, service) `that can make requests`.
 
+<br><br>
 
-## IAM Identity Center
-
+# IAM Identity Center
 * Cloud-based `Single Sign-On (SSO)` service that provides `centralized` access management for  
     * `Users (workforce)` 
     * Across multiple `AWS accounts` and `business applications`.
@@ -42,16 +50,16 @@
 
 <br><br>
 
-## Security Token Service (AWS STS)
+# Security Token Service (AWS STS)
 * Provides temporary AWS credentials.
 
-### How It Works
+## How It Works
 1. AssumeRole (API Call) operation of the AWS STS API is successfully invoked
 2. Returns `temporary`, `limited-privilege` credentials that were `requested` by the 
     * `IAM user` 
     * `user that was authenticated through federation`
 
-### [Identity Federation](../Security.md#identity-federation) To AWS With An [Identity Broker](../Security.md#identity-broker)
+## [Identity Federation](../Security.md#identity-federation) To AWS With An [Identity Broker](../Security.md#identity-broker)
 1. User signs in with existing `credentials` for their `IdP`
 2. `Identity broker` acts as an intermediary between `IdP` and `SP`
     *  The `identity broker` requests temporary credentials from AWS `STS`.

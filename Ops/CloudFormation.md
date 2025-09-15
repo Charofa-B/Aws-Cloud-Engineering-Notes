@@ -1,12 +1,23 @@
 # CloudFormation
+* [What Is It](#what-is-it)
+* [Compoenents](#components)
+* [How It Works](#how-it-works)
+* [AWS Services Use CloudFormation](#aws-services-use-cloudformation)
+* [CloudFormation Designer](#cloudformation-designer)
+* [What Happens When CloudFormation Stack Operations Fail](#what-happens-when-cloudformation-stack-operations-fail)
+* [AWS Solutions Library](#aws-solutions-library)
+* [Amazon Q](#amazon-q)
 
+<br><br>
+
+# What Is It
 * [Infrastructure as Code (IaC)](../Infrastructure-Automation.md#iac) service from AWS.
 * Enables `orderly` and `predictable` provisioning and updating of resources
 * Supports `version control` and `rollback` of infrastructure changes.
 
 <br><br>
 
-## Key Components
+# Components
 * **Template**
     * The `blueprint` (written in `JSON or YAML`).
     * `Defines` all `resources`, `configurations`, and `relationships`.
@@ -48,7 +59,7 @@
 
 <br><br>
 
-## How It Works
+# How It Works
 1. **Write a Template**
 2. **Provision Resources**
     * `CloudFormation engine` takes care of calling the `correct` AWS `APIs` in the `right order` (e.g., create VPC → subnet → EC2).
@@ -62,40 +73,40 @@
 
 <br><br>
 
-## AWS Services Use CloudFormation
+# AWS Services Use CloudFormation
 
-### Elastic Beanstalk
+## Elastic Beanstalk
 - When you deploy an app with Beanstalk, it `uses CloudFormation templates behind the scenes` to `spin up` EC2, load balancers, Auto Scaling, etc.  
 - You don’t see the `templates directly`, but `CloudFormation is managing the infrastructure`.  
 
-### AWS Quick Starts
+## AWS Quick Starts
 - `Prebuilt, automated reference architectures` (like a ready-to-go VPC, WordPress stack, or SAP setup).  
 - They’re distributed as `CloudFormation templates` you can launch in your account.  
 
-### AWS Serverless Application Model (AWS SAM)
+## AWS Serverless Application Model (AWS SAM)
 - A serverless-specific `extension of CloudFormation` easier to define and deploy serverless applications (apps that run without you managing servers)..
 - Provides a shorthand syntax (e.g., `AWS::Serverless::Function`) to define Lambda, API Gateway, DynamoDB, etc.  
 - During deployment, SAM `converts your template into standard CloudFormation resources`.  
 
-### AWS Amplify
+## AWS Amplify
 - A `full-stack app framework (for web/mobile apps)`.  
 - When you `configure` authentication, storage, or APIs in Amplify → it `generates CloudFormation templates to provision those backend resources`.  
 
-### AWS Cloud Development Kit (AWS CDK)
+## AWS Cloud Development Kit (AWS CDK)
 - Lets you `write` `CloudFormation` templates using `code` (TypeScript, Python, Java, C#, etc.).  
 - `CDK` synthesizes your `code` → outputs a `CloudFormation template` → provisions resources. 
 
 
 <br><br>
 
-## CloudFormation Designer
+# CloudFormation Designer
 * `Visual tool` that enables you to `create and modify AWS CloudFormation templates` by using a `drag-and-drop` interface.
 
 <br><br>
 
-## User-Data Vs CloudFormation
+# User-Data Vs CloudFormation
 
-### User Data (Script-Based Configuration)
+## User Data (Script-Based Configuration)
 * Greater `control over execution` order.
 * Supports `loops`, `conditionals`, and `error handling` for flexible automation.
 * Requires careful `escaping` of `characters` in JSON/YAML.
@@ -105,7 +116,7 @@
     * `Direct control` over script execution order.
     * `Programming logic` with loops and conditions.
 
-### CloudFormation
+## CloudFormation
 * Supports `config sets` (multiple configurations in one template).
 * Automatically `rolls back` on failure
 * `Easier to update` and maintain than user data.
@@ -114,7 +125,7 @@
     * Automatic `rollback on failure`.
     * `Easier updates` without modifying user data scripts.
 
-## What Happens When CloudFormation Stack Operations Fail
+# What Happens When CloudFormation Stack Operations Fail
 Follows a failure policy
 * **Default: ROLLBACK**
     * If `stack creation fails` → CloudFormation `deletes all resources it already created`.
@@ -126,20 +137,20 @@ Follows a failure policy
     * `Actively deletes all resources if stack creation fails`.
     * Leaves `nothing behind (cleaner than DO_NOTHING, but no chance to debug)`.
 
-### Stack Policies
+## Stack Policies
 * These are JSON rules that `protect certain resources from accidental changes or deletion`.
 
-### Termination Protection
+## Termination Protection
 * `setting` that `prevents a stack from being deleted (even by admins)`.
 * Must `disable this feature first before deleting`.
 * `Handy for critical environments (e.g., prod)`.
 
-### Override for Failed Update Rollbacks
+## Override for Failed Update Rollbacks
 * When you `update a stack`, CloudFormation `applies changes`. If the `update fails`, it automatically `rolls back to the last working state`.
 
 <br><br>
 
-## AWS Solutions Library
+# AWS Solutions Library
 * A `collection` of `automated` reference implementations `built` by `AWS architects and partners`.
 * Provides `pre-packaged`, `production-ready solutions` for `common business` and `technical` `problems`.
 * Each solution includes:
@@ -147,7 +158,7 @@ Follows a failure policy
     * CloudFormation `templates` (to deploy automatically in your AWS account)
     * `Implementation guides`
 
-### Solution Types
+## Solution Types
 * **Purpose-Built AWS Services**
 * **AWS Solutions**
 * **Partner Solutions**
@@ -155,7 +166,7 @@ Follows a failure policy
 
 <br><br>
 
-## Amazon Q 
+# Amazon Q 
 * `Developer assists` with software development integrated on `IDEs`, including `code generation, explanation, and improvements`.
 * help you design `solid IaC templates`.
 

@@ -1,17 +1,23 @@
 # VPC Flow Logs
+* [What Is It](#what-is-it)
+* [Features](#features)
+* [VPC Troubleshooting](#vpc-troubleshooting)
 
+<br><br>
+
+# What Is It
 * Capture `packet-level traffic` details for `analysis`.
 
 <br><br>
 
-## Features
+# Features
 * Can `capture all`, `accepted`, or `rejected` `traffic`.
 * Can be enabled at the `VPC`, `subnet`, or `ENI` `level`.
-* `Logs` are `delivered` to [CloudWatch](), [S3](../Storage/S3.md), or [Kinesis Data Firehose]().
+* `Logs` are `delivered` to [CloudWatch](./CloudWatch.md), [S3](../Storage/S3.md), or [Kinesis Data Firehose](../Data%20Ingestion%20&%20Streaming%20&%20Analytics/Kinesis.md).
 
 <br><br>
 
-## Default Flow Log Record Example 1
+# Default Flow Log Record Example 1
 
 | Field name   | Field description                                                                                   | Example value       |
 |--------------|---------------------------------------------------------------------------------------------------|---------------------|
@@ -26,17 +32,17 @@
 
 <br><br>
 
-## VPC Troubleshooting Tools
+# VPC Troubleshooting
 
-### Reachability Analyzer
+## Reachability Analyzer
 * Checks if `two VPC resources` can `connect`.
 * Provides a step-by-step `network path`.
 * Identifies `blocking components` (SGs, NACLs, route tables).
 
-### Network Access Analyzer
+## Network Access Analyzer
 * Identifies `unintended` network `access`.
 * Ensures `security & compliance`.
 
-### VPC Traffic Mirroring
+## VPC Traffic Mirroring
 * `Copies` network `traffic` for `analysis`.
 * Used for security `monitoring` & `troubleshooting`.

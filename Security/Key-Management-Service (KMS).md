@@ -1,5 +1,15 @@
 # Key Management Service (KMS)
+* [What Is It](#what-is-it)
+* [Features](#features)
+* [Automatically Rotation](#au)
+* [Customer Managed Keys (CMKs)](#customer-managed-keys-cmks)
+* [Key Concept](#key-concept)
+* [Encryption in Transit vs At Rest](#encryption-in-transit-vs-at-rest)
+* [Key Policies vs IAM Policies](#key-policies-vs-iam-policies)
 
+<br><br>
+
+# What Is It
 * Provides the `ability` to `create` and `manage` `cryptographic keys`
 * Uses [hardware security modules (HSMs)](../Security.md#hsm) to `protect` your `keys`
 * `Integrates` with other AWS `services`
@@ -7,7 +17,7 @@
 
 <br><br>
 
-## Features
+# Features
 * **Key Management**
     * `Customer-Managed Keys`
         * KMS manages and protects the cryptographic keys
@@ -18,11 +28,11 @@
 
 <br><br>
 
-## Customer Managed Keys (CMKs)
+# Customer Managed Keys (CMKs)
 * KMS key that `you create, own, and manage`.
 * The main `resource type` in KMS and represents the `top-level logical key object that can be used to encrypt/decrypt` data or `generate data keys`.
 
-### Features
+## Features
 * **Full Control Over Key Lifecycle**
     * You create, disable, rotate, and delete the key.
 * **Custom Key Policies & Permissions**
@@ -33,46 +43,42 @@
 
 <br><br>
 
-## Key Concept
-### Encrypt
+# Automatically Rotation
+* Automatically rotate Customer Managed Keys (CMKs) once per year.
+* Enable it per key — KMS handles the rest.
+* Automatic rotation is not available for AWS-managed keys; only for CMKs.
+
+<br><br>
+
+# Key Concept
+## Encrypt
 * Encrypts `plaintext data` up to `4096 bytes (4Kb)` using `your managed key (Customer Managed Key CMK)`
 * Supports both `symmetric` and `asymmetric` KMS `keys`
 * Encrypting `small amounts` of sensitive data like `passwords`, `identifiers`, or other `confidential information`.
 
-### GenerateDataKey
+## GenerateDataKey
 * Returns a `unique symmetric` data key for `external use`.
 * Provides both `plaintext` and `encrypted (using the specified KMS key) versions of the data key`.
 
-### GenerateDataKeyPair
+## GenerateDataKeyPair
 * Returns a `unique asymmetric` data key pair for `external use`.
 * Provides `plaintext public` and `private keys`, along with an `encrypted version of the private key`
 
-### Decrypt
+## Decrypt
 * Decrypts `ciphertext` previously `encrypted` by a `KMS key` using operations like Encrypt, GenerateDataKey, etc.
 * For `asymmetric keys`, you must `specify the key` and the `encryption algorithm` used.
 
-### SSM
+## SSM
 * `Secure string type` with encryption using AWS KMS.
 
 <br><br>
 
-## Integrations
+# Key Policies vs IAM Policies
+* Key policies are `resource-based` policies that define who can access the key.
+* IAM policies are `identity-based`, controlling user/role actions.
 
-* KMS `does not perform bulk data encryption itself`.
-* The `actual encryption and decryption` of large datasets happens `inside the service`, `not inside KMS`.
+<br><br>
 
-
-### [S3](../Storage/S3.md)
-* `Server-side encryption` of `objects`.
-* Encryption `keys` `stored` and `used` from KMS
-* `Permissions` `on KMS` keys can be `set` to `control access`.
-
-### [Elastic Block Storage (EBS)](../Computing/EC2.md#ebs)
-* Data at `rest, I/O, and snapshots` are `encrypted`.
-* Encryption `occurs` on servers `hosting EC2 instances`.
-* Supported on `all EBS volume types`.
-* no additional actions required.
-* `Snapshots` of `encrypted volumes` and `volumes created` from `them` are `automatically encrypted`.
-    * AWS creates a `new volume` from that `snapshot`.
-    * All data in `that snapshot` is copied over as `encrypted data`.
-    * The `new volume` is `fully encrypted` with the `same key` (or a new key you specify).
+# Encryption in Transit vs At Rest
+* KMS covers at-rest encryption.
+* For in-transit encryption, services use `TLS`.

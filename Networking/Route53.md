@@ -1,9 +1,19 @@
 # Route 53
-* Scalable `Domain Name System (DNS)` web service
+* [What Is It](#what-is-it)
+* [Features](#features)
+* [Routing Policies](#routing-policies)
+* [DNS Record Types](#dns-record-types)
+* [Services Integration](#services-integration)
 
 <br><br>
 
-## Features
+# What Is It
+* Scalable DNS service.
+* Can register domains, resolve names to IPs, and route traffic to AWS or external resources.
+
+<br><br>
+
+# Features
 * **Domain Registration**
     * `Register` and `manage` `domains` (e.g., example.com).
 * **DNS Resolution**
@@ -16,24 +26,6 @@
     * `Monitors` `endpoint health` and reroutes traffic to healthy resources.
 * **Global Traffic Management**
     * Uses `routing policies`
-
-<br><br>
-
-## Integration With [ELB](../Networking/ElasticLoadBalancer.md)
-
-1. By `default`, AWS `assigns` a `hostname` (DNS name) to your [load balancer]() that `resolves` to a set of `IP addresses`.
-2. Assign your `own hostname` by `using` an `alias resource record set`.
-    * `Alias Record` – `Routes` traffic `only to AWS resources` (e.g., ELB, S3, CloudFront).
-3. Or Create a `Canonical Name Record (CNAME)` that points to your [load balancer]().
-    * `CNAME` Is a type of `DNS record` that `maps` `one domain name` (`alias`) to `another domain name` (`the canonical name`).
-    * `Redirects` DNS queries to `any domain` — not just AWS-managed resources.
-    * **Limitation**: be used at `the root domain` (example.com), only for `subdomains` (app.example.com).
-
-### Limitations Of Using The Default LB Hostname
-* Not User-Friendly
-* TLS/SSL Certificates must match your custom domain, not the AWS LB hostname.
-* Can't change backends easily
-* Services (like email, APIs, microservices) depend on using consistent domain naming you (can’t structure that around the raw AWS hostname.)
 
 <br><br>
 
@@ -67,3 +59,63 @@
 
 * **Geolocation/IP-based Routing Rolicy** 
     * `Route` traffic based on the `location` of users and the `IP addresses` that the `traffic originates from`.
+
+<br><br>
+
+# DNS Record Types
+* Defines what kind of information a DNS entry holds and how it should be used
+* Basically tells DNS resolvers what to do with a domain name.
+
+## Types
+* **A** Maps a domain/subdomain to an IPv4 address
+* **AAAA** Maps a domain to an IPv6 address
+* **CNAME (Canonical Name)** Maps a domain/subdomain to another domain name
+* **Alias** AWS-specific; maps a domain/subdomain to AWS resources (ELB, CloudFront, S3, etc.)
+* **MX (Mail Exchange)** Routes email traffic to mail servers
+* **TXT** Holds text data (SPF, verification, custom info)
+* **NS (Name Server)** Specifies authoritative name servers for the domain
+* **SRV** Specifies services and ports (like for VOIP)
+
+<br><br>
+
+# Services Integration
+
+## Elastic Load Balancer (ELB)
+* Classic use case: Map DNS names to Application Load Balancer (ALB), Network Load Balancer (NLB), or Gateway Load Balancer (GWLB).
+* Supports Alias Records (free, no extra DNS query cost).
+
+<br>
+
+## CloudFront
+* Map custom domains to distributions using Alias Records.
+* Works for apex/root domains (example.com) too — CNAMEs not allowed at apex.
+
+<br>
+
+## S3 (Static Website Hosting)
+* Route 53 can point to S3 website endpoints.
+* Only Alias Records work with S3 endpoints (not standard CNAMEs).
+
+<br>
+
+## AWS Global Accelerator
+* Route 53 can route traffic to Global Accelerator endpoints.
+* Used for multi-region failover + optimized routing.
+
+<br>
+
+## Amazon API Gateway
+* Custom domain support for API Gateway endpoints.
+* Route 53 can map your domain (api.example.com) to API Gateway using Alias records.
+
+<br>
+
+## VPC Endpoints / Private Hosted Zones
+* Route 53 can be used with Private Hosted Zones for routing within a VPC.
+* Works with VPC Endpoints for private service access (S3, DynamoDB, etc.).
+
+<br>
+
+## AWS Elastic Beanstalk
+* Beanstalk creates CNAME endpoints for environments.
+* Route 53 can point custom domains to those CNAMEs.

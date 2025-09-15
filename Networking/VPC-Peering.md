@@ -1,24 +1,30 @@
 # VPC Peering
+* [What Is It](#what-is-it)
+* [Features](#features)
+* [Peering Scenarios](#peering-scenarios)
+* [Limits](#Limits)
+* [Bypass Limits (Alternatives)](#bypass-limits-alternatives)
+* [Peering Pricing](#peering-pricing)
 
-A networking connection that lets you route traffic privately between 2 VPCs
+<br><br>
 
-### Benefits of VPC peering
+# What Is It
+
+Networking connection that lets you route traffic privately between 2 VPCs
+
+<br><br>
+
+# Features
 * Highly Available
-
 * No Bottlenecks
-
 * Inter-Region Peering (Cross AZ Connections)
-
 * No Public Internet Exposure
-
 * Encrypted Traffic
-
 * Cross-Account Peering
-
 * Cost-Effective
 
-### Peering scenarios
-#### 1. Full sharing of resources between all VPCs (Fully Meshed VPC Peering)
+# Peering scenarios
+## 1. Full sharing of resources between all VPCs (Fully Meshed VPC Peering)
 
 <img src='../Assets/Simple-Peering-VPC-Full-Share.png' />
 
@@ -55,7 +61,7 @@ A networking connection that lets you route traffic privately between 2 VPCs
 * Cost efficiency → avoids duplicating infrastructure in every VPC.
 
 
-### Limitations
+# Limits
 * No overlapping CIDR blocks → **(Each VPC’s CIDR block must be completely outside the range of the other VPC’s CIDR)** or peering won’t work.
 
 
@@ -67,14 +73,14 @@ A networking connection that lets you route traffic privately between 2 VPCs
 
 <br><br>
 
-### Bypass This Limtiation (Alternatives)
+# Bypass Limits (Alternatives)
 Almost All The Limtis of **VPC Peering** can bypass by using [Transit Gateway](./Transit-Gateway.md)
 
 ⚠️ But note: TGW still does not allow overlapping CIDR ranges.
 
 <br><br>
 
-### VPC Perring Pricing
+# Perring Pricing
 Starting May 1st 2021, all data transfer over a VPC Peering connection that **stays** within an **Availability Zone (AZ)** is now **free**.
 
 All data transfer over a VPC Peering connection that **crosses Availability Zones** will continue to be **charged at the standard in-region data transfer rates**.

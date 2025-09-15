@@ -1,13 +1,41 @@
 # Elastic Load Balancer
-
-* Aws version of [Load Balancer](../Networking.md#load-balancer)
-* Supports multiple protocols (HTTP, HTTPS, TCP, UDP) and advanced routing for modern application architectures
-* Works tightly with Auto Scaling Groups to add/remove EC2 instances.
-* Integrates with AWS Certificate Manager for SSL/TLS, and supports VPC security groups and AWS WAF to protect against attacks.
+* [What Is It](#what-is-it)
+* [Target Groups](#target-groups)
+* [Health Checks](#health-checks)
+* [Types](#types)
+    * Application Load Balancer
+    * Network Load Balancer
+    * Gateway Load Balancer
+* [Sticky Sessions](#sticky-session)
+* [Listener Rules](#listener-rules)
+* [Cross-Zone LB](#cross-zone-load-balancing)
+* [SSL Server Certificates](#ssl-server-certificates)
 
 <br><br>
 
-## Types
+# What Is It
+* Aws version of [Load Balancer](../Networking.md#load-balancer)
+* Supports `multiple protocols` (HTTP, HTTPS, TCP, UDP) and advanced routing for modern application architectures
+* Works `tightly` with Auto `Scaling` Groups to add/remove EC2 instances.
+* Integrates with AWS `Certificate Manager` for SSL/TLS, and supports VPC security groups and AWS WAF to protect against attacks.
+
+<br><br>
+
+# Target Groups
+* A target group is where the load balancer sends traffic.
+* Targets can be: `EC2 instances`, `IP addresses`, `Lambda functions`, or `ALBs/NLBs`.
+* `Health checks` are `defined` at the target group level.
+* Supports `weighted target` groups (for blue/green deployments).
+
+<br><br>
+
+# Health Checks
+* Defined per `target group` (protocol, path, interval, success threshold).
+* Determines if `traffic` should be routed to a `target`.
+
+<br><br>
+
+# Types
 * **Application Load Balancer (ALB)** – `Layer 7`, routes based on HTTP/S rules.
     * Native `IPv6` Support
     * `Automatically` knows which `container` is `listening` on which `port`
@@ -18,7 +46,6 @@
 * **Network Load Balancer (NLB)** – `Layer 4`, handles high-performance TCP/UDP traffic.
     * Allows you to `assign static Elastic IP addresses`, providing a `fixed IP` address across reboots
     * `NLB` [PrivateLink]() Integration serve as the `entry point` to `private applications`
-    * `Sticky sessions` send `all requests` from the same client to the `same backend` to maintain `session continuity`.
     * Can `route traffic` to `on-prem` resources if `network connectivity exists` (`Direct Connect`, `VPN`, or `VPC peering`).
     * `CloudWatch` and `VPC Flow Logs` `Integration` Metrics
 
@@ -38,15 +65,41 @@
 
 <br><br>
 
-## Cross-zone load balancing
+# Sticky Sessions
+* **ALB** → via application cookies (or AWSALB cookie).
+* **NLB** → via source IP affinity.
+Useful for apps that require session persistence.
+
+<br><br>
+
+# Listener Rules
+Process that checks for connection requests using
+* Protocol (HTTP, HTTPS, TCP, TLS, UDP, gRPC, etc.)
+* Port (like 80, 443)
+* For **ALB**, listener conditions can be very advanced (`path-based`, `host-based`, `headers`, `query strings`).
+* For **NLB**, listener rules are simpler (port/protocol only).
+
+## Components
+* Conditions – what must match in the request?
+* Actions – what to do if the condition matches?
+
+## Default Rule
+* Every listener has a default rule (if no conditions match).
+* Usually set to forward to a `default target` group or `return a fixed response`.
+
+<br><br>
+
+# Cross-zone load balancing
 **Enabled** Load balancer nodes `distribute` traffic evenly `across` all `targets` in all `enabled Availability Zones`.
 **Disabled** Each node `routes` `requests` only within its `own Availability zone`.
 
 **Recomendation**  `Enable cross-zone` load balancing for `more even traffic` distribution and `better resource utilization`.
 
+**For NLB** : note that cross-zone LB may incur data transfer charges, while for ALB it’s free.
+
 <br><br>
 
-## SSL Server Certificates
+# SSL Server Certificates
 * The `ALB` relies on an `X.509` certificate from a `trusted Certificate Authority` (CA). 
 * `AWS Certificate Manager` (ACM) `simplifies` `certificate` `provisioning` and management.
 * **Certificate Options** You can `assign` an HTTPS `certificate` using:
