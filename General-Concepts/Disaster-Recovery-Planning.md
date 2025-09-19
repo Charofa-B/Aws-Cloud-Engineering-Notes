@@ -1,5 +1,18 @@
 # Disaster Recovery Planning
+* [What Is It](#what-is-it)
+* [Levels Of Failures](#levels-of-failures)
+* [Key Metrics](#key-metrics)
+* [5 Layers To Focus On For Recovery Planning](#5-layers-to-focus-on-for-recovery-planning)
+* [Common Disaster Recovery Patterns](#common-disaster-recovery-patterns)
+    * [Backup And Restore Pattern](#backup-and-restore-pattern)
+    * [Pilot Light Pattern](#pilot-light-pattern)
+    * [Warm Standby Pattern](#warm-standby-pattern)
+    * [Multi-site pattern](#multi-site-pattern)
+    * [Blue/Green Deployment](#bluegreen-deployment)
 
+<br><br>
+
+# What Is It
 `Plan` strategies dependent on the `business's evaluation` of which `level of failure` the business can `tolerate` following 4 keys
 * `How quickly` the business needs to `recover`
 * `How much data loss` the business can `tolerate`
@@ -8,7 +21,7 @@
 
 <br><br>
 
-## 3 Levels Of Failures
+# Levels Of Failures
 * **Small-scale events** 
     * A `server stops` responding.
 * **Large-scale events** 
@@ -18,8 +31,8 @@
 
 <br><br>
 
-## Key Metrics
-### Recovery Point Objective (RPO)
+# Key Metrics
+## Recovery Point Objective (RPO)
 Maximum `acceptable` amount of `data loss`, measured in `time`.
 
 **Example**
@@ -32,7 +45,7 @@ Maximum `acceptable` amount of `data loss`, measured in `time`.
 
 <br>
 
-### Recovery Time Objective (RTO)
+## Recovery Time Objective (RTO)
 Maximum `acceptable` amount of `time` after a `disaster` strikes that a business process can `remain out of commission`.
 
 **Example**
@@ -42,7 +55,7 @@ Maximum `acceptable` amount of `time` after a `disaster` strikes that a business
 
 <br><br>
 
-## Business Continuity Plan (BCP)
+# Business Continuity Plan (BCP)
 System of `prevention` and `recovery` from `potential threats` to a company consists of :
 * Business `impact analysis`
 * Risk `assessment`
@@ -51,8 +64,8 @@ System of `prevention` and `recovery` from `potential threats` to a company cons
 
 <br><br>
 
-## 5 Layers To Focus On For Recovery Planning
-### Storage
+# 5 Layers To Focus On For Recovery Planning
+## Storage
 * Consider using `Cross-Region Replication` (CRR)
 * Ensure `data protection`
     * Consider taking `point-in-time snapshots` Volumes
@@ -62,23 +75,23 @@ System of `prevention` and `recovery` from `potential threats` to a company cons
     * Ensure `continuous access to your files`
     * `Replicate` `file storage`
 
-### Compute
+## Compute
 * `Load Balancing` to `distributes traffic` across `multiple instances` for increased availability.
 * `Health Checks` to `Monitors instance` health and `automatically removes unhealthy instances`.
 * `Auto-Scaling` `Adjusts capacity based on traffic` patterns to handle load fluctuations.
 
-### Database
+## Database
 * `Distributes database` instances across `multiple` `AZs` to enhance availability.
 * Creates `read-only copies` of database in the `same` or `different Regions`.
 * Create `point-in-time copies` of your database for `backup and recovery`.
 * `Replicates snapshots` across `Regions for disaster recovery`.
 * Quickly `scale` your database to `meet changing demands` `during recovery`.
 
-### Networking & Content Delivery
+## Networking & Content Delivery
 * Route `traffic` to `healthy endpoints`, `even` `if primary endpoints fail`.
 * `Distribute` traffic `based on user location` for optimal `performance and redundancy`.
 
-### Deployment orchestration
+## Deployment orchestration
 * `Automates` configuration and deployment `tasks`.
 * Organizes applications into `layers for easier management`.
 * `Templates` environments for rapid recovery and fast `redeploy applications to new environments`.
