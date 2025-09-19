@@ -1,5 +1,14 @@
 # Step Functions
+* [What Is It](#what-is-it)
+* [Important To Know](#important-to-know)
+* [How It Works](#how-it-works)
+* [Workflow Types](#workflow-types)
+* [State Machine State Types](#state-machine-state-types)
+* [Pricing](#pricing)
 
+<br><br>
+
+# What Is It
 * `Serverless` `orchestration` service.
 * `Manages workflows` across `multiple AWS services` and `microservices`.
 * Implements `coordinations`, such as `running` tasks `sequentially` or in `parallel`, `branching`, and `timeouts`
@@ -8,7 +17,7 @@
 
 <br><br>
 
-## Important To Know
+# Important To Know
 * **Not a protocol replacement** Step Functions does not replace communication methods like `gRPC` or `REST APIs`.
 * **Orchestration, not transport** It’s a `workflow service` that `sequences` tasks, `calls` APIs/services, and `handles` retries, errors, and `parallelism`.
 * **Best with AWS-native services** optimized for `orchestrating AWS services` through native integrations.
@@ -16,7 +25,7 @@
 
 <br><br>
 
-## How It Works
+# How It Works
 * **Orchestration**
     * `Connects` `microservices` or AWS `services` `into a defined workflow` (`state machine`).
     * `Each step` can `call` a [Lambda](), [ECS task](), [API Gateway endpoint](), or other AWS service.
@@ -29,7 +38,7 @@
 * **Visualization**
     * Provides a `visual workflow diagram` in the AWS console → easier to debug complex microservice interactions.
 
-### Example: Order Processing Workflow
+## Example: Order Processing Workflow
 1. Receive order (API Gateway)
 2. Charge payment (Lambda + DynamoDB)
 3. Update inventory (DynamoDB)
@@ -37,7 +46,7 @@
 
 <br><br>
 
-## Step Functions Workflow Types
+# Workflow Types
 * 2 execution `modes` you can choose when `creating` a `state machine`.
 
 | Feature               | **Standard Workflow**             | **Express Workflow**                 |
@@ -52,7 +61,7 @@
 
 <br><br>
 
-## State Machine State Types
+# State Machine State Types
 1. **Work States (Perform tasks)**
     * **Task**: `Executes` a `unit of work` via AWS `Lambda`, an `API call`, or other AWS `service integrations`.
     * **Activity**: `External worker` (EC2, Lambda, mobile app) `performs the task`.
@@ -70,7 +79,7 @@
 
 <br><br>
 
-## Pricing
+# Pricing
 ### Standard Workflows
 * Charged per `state transition`
 * Cost: `$0.025` per `1,000 state transitions` (most regions)
