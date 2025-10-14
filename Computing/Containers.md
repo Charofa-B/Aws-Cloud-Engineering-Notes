@@ -1,4 +1,4 @@
-# [Container]() Services
+# Container
 
 ## Elastic Container Service (ECS)
 * Fully managed container `orchestration platform`.
